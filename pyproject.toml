@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "gspot_fastapi_auth"
-version = "0.0.2"
+name = "gspot_auth"
+version = "0.0.1"
 authors = [
-    { name = "gravity48", email = "gravity4849@gmail.com" },
+    { name = "oxpaoff", email = "kosenkoviktor11@gmail.com" },
 ]
-description = "GSpot authentication package for FastApi"
+description = "A Django app for auth."
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
@@ -29,8 +29,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/gravity48/gspot_fastapi_auth"
-"Bug Tracker" = "https://github.com/gravity48/gspot_fastapi_auth/issues"
+"Homepage" = "https://github.com/oxpaoff/gspot_auth"
+"Bug Tracker" = "https://github.com/oxpaoff/gspot_auth/issues"
 
 [tool.black]
 include = '\.pyi?$'
