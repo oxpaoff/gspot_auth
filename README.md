@@ -13,3 +13,14 @@ INSTALLED_APPS = [
     'gspot_auth',
 ]
 ```
+
+2. Add CustomJWTAuthentication to DEFAULT_AUTHENTICATION_CLASSES in settings.py
+
+```
+REST_FRAMEWORK = {
+    ...
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'gspot_auth.authentication.CustomJWTAuthentication'
+    ],
+}
+```
