@@ -18,7 +18,7 @@ class CustomJWTAuthentication(BaseAuthentication):
         return user_class(**data)
 
     def get_token(self, request) -> str:
-        if settings.GET_TOKEN_FROM == 'header':
+        if settings.GET_TOKEN_FROM == 'headers':
             token = self._get_token_from_header(request)
         else:
             token = self._get_token_from_cookies(request)

@@ -21,7 +21,7 @@ INSTALLED_APPS = [
 - `REDIS_HOST`
 - `REDIS_PORT`
 - `REDIS_PASSWORD`
-- `GET_TOKEN_FROM`
+- `GET_TOKEN_FROM` - 'headers' or 'cookies'
 
 2. Add CustomJWTAuthentication to DEFAULT_AUTHENTICATION_CLASSES in settings.py
 
