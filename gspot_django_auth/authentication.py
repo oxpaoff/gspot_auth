@@ -8,16 +8,12 @@ from .token import Token
 
 class CustomJWTAuthentication(BaseAuthentication):
     def authenticate(self, request):
-        try:
-            jwt_token = self.get_token(request)
-        except AuthenticationFailed:
-            return None
-
+        jwt_token = self.get_token(request)
         token = Token()
 
         data = token.get_token_data(jwt_token)
         if not data:
-            raise AuthenticationFailed('Empty Payload')
+            raise AuthenticationFailed('No data')
         user_class = UserFactory().get_user(data.pop('role'))
         return user_class(**data)
 
