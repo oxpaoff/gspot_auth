@@ -1,4 +1,4 @@
-from base.exceptions import AuthenticationFailed
+from gspot_auth.base.exceptions import AuthenticationFailed
 
 
 class TokenExpired(AuthenticationFailed):
