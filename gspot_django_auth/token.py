@@ -2,7 +2,7 @@ import jwt
 from django.conf import settings
 from jwt.exceptions import ExpiredSignatureError
 
-from exceptions import TokenInvalid, TokenExpired
+from .exceptions import TokenInvalid, TokenExpired
 from .redis_client import RedisAccessClient
 
 

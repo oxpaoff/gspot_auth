@@ -6,5 +6,9 @@ class AuthenticationFailed(APIException):
     status_code = status.HTTP_401_UNAUTHORIZED
 
 
+class TokenExpired(AuthenticationFailed):
+    pass
+
+
 class TokenInvalid(AuthenticationFailed):
     pass
