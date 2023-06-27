@@ -10,9 +10,18 @@ Quick start
 ```
 INSTALLED_APPS = [
     ...
-    'gspot_auth',
+    'gspot_django_auth',
 ]
 ```
+
+2. Define these parameters in `settings.py`
+
+- `REDIS_ACCESS_PREFIX`
+- `REDIS_ACCESS_DB`
+- `REDIS_HOST`
+- `REDIS_PORT`
+- `REDIS_PASSWORD`
+- `GET_TOKEN_FROM`
 
 2. Add CustomJWTAuthentication to DEFAULT_AUTHENTICATION_CLASSES in settings.py
 
@@ -20,7 +29,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     ...
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'gspot_auth.authentication.CustomJWTAuthentication'
+        'gspot_django_auth.authentication.CustomJWTAuthentication'
     ],
 }
 ```
