@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gspot_django_auth"
-version = "0.0.3"
+version = "0.0.9"
 authors = [
     { name = "oxpaoff", email = "kosenkoviktor11@gmail.com" },
 ]
