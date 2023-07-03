@@ -11,6 +11,7 @@ class BaseUser:
     phone: str
     avatar: str
     country: str
+    is_banned: bool
     created_at: datetime
     updated_at: datetime
 
