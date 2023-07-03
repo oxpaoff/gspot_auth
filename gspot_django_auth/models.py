@@ -12,6 +12,7 @@ class BaseUser:
     avatar: str
     country: str
     is_banned: bool
+    is_active: bool
     created_at: datetime
     updated_at: datetime
 
