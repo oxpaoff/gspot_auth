@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'gspot_django_auth'
+    'gspot_django_auth',
+    'app'
 ]
 
 MIDDLEWARE = [
