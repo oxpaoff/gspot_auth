@@ -23,10 +23,6 @@ class RedisAccessClient:
         if value:
             return json.loads(value)
 
-    def __put(self, name: str, value: dict, ttl: int) -> None:
-        value_data = json.dumps(value)
-        self.conn.set(name=name, value=value_data, ex=ttl)
-
     def is_token_exist(self, token: str, prefix: bool = True) -> dict | None:
         key = f'{self._prefix}:{token}' if prefix else token
         return self.__get(key)
