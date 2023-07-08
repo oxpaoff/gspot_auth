@@ -19,6 +19,8 @@ class BaseUserFactory(factory.Factory):
     country = factory.Faker('country')
     created_at = str(datetime.now())
     updated_at = str(datetime.now())
+    is_banned = False
+    is_active = True
 
 
 class AdminUserFactory(BaseUserFactory):
