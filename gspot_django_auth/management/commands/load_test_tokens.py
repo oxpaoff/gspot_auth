@@ -125,4 +125,5 @@ class Command(BaseCommand):
         redis_client = RedisAccessClient()
         for token, value in tokens.items():
             value_data = json.dumps(value)
-            redis_client.conn.set(name=token, value=value_data)
+            name = f'{redis_client._prefix}:{token}'
+            redis_client.conn.set(name=name, value=value_data)
