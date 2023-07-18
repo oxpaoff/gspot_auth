@@ -2,6 +2,10 @@
 
 GSpot Auth is a Django app for GSpot project https://github.com/DJWOMS/GSpot
 
+Installation
+-----------
+``$ pip install gspot-django-auth``
+
 Quick start
 -----------
 
