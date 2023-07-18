@@ -1,8 +1,9 @@
-import redis
 import json
 
 from django.core.management import BaseCommand
 from django.conf import settings
+
+from gspot_django_auth.redis_client import RedisAccessClient
 
 
 class Command(BaseCommand):
@@ -121,12 +122,7 @@ class Command(BaseCommand):
 
     @staticmethod
     def add_to_redis(tokens: dict):
-        redis_client = redis.StrictRedis(
-            host=settings.REDIS_SHARED_HOST,
-            port=settings.REDIS_SHARED_PORT,
-            db=settings.REDIS_ACCESS_DB,
-            password=settings.REDIS_SHARED_PASSWORD
-        )
+        redis_client = RedisAccessClient()
         for token, value in tokens.items():
             value_data = json.dumps(value)
-            redis_client.set(name=token, value=value_data)
+            redis_client.conn.set(name=token, value=value_data)
