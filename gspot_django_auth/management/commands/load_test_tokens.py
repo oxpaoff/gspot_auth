@@ -1,7 +1,6 @@
 import json
 
 from django.core.management import BaseCommand
-from django.conf import settings
 
 from gspot_django_auth.redis_client import RedisAccessClient
 
@@ -15,7 +14,11 @@ class Command(BaseCommand):
     def get_tokens() -> dict:
         admin_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgyNzczLCJleHAiOjE2ODk2ODMwNzN9.Q-_Lz4GmjTJuprbsKv4jSW3OGZ-ixxCmRGHva8KLkoM"
         admin_data = {
-            "token_type": "access",
+            "username": "admin_username",
+            "first_name": "admin_first_name",
+            "last_name": "admin_last_name",
+            "is_banned": False,
+            "is_active": True,
             "iat": 1689682773,
             "exp": 1689683073,
             "user_id": "7fff5488-a091-44a1-9a4e-cb9f535a7f34",
@@ -36,6 +39,10 @@ class Command(BaseCommand):
 
         dev_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgzMTI3LCJleHAiOjE2ODk2ODM0Mjd9.h-pqm9eDO9yOs2FrHIW0nPTwT45kT9rHvieYfvJoUXc"
         dev_data = {
+            "username": "dev_username",
+            "first_name": "dev_first_name",
+            "last_name": "dev_last_name",
+            "is_banned": False,
             "token_type": "access",
             "iat": 1689683127,
             "exp": 1689683427,
@@ -59,6 +66,10 @@ class Command(BaseCommand):
         }
         owner_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgzNTQwLCJleHAiOjE2ODk2ODM4NDB9.o8QLclmTxUOEUiVlvHyEghdjtKRbEYn9eAk_jXCswhQ"
         owner_data = {
+            "username": "owner_username",
+            "first_name": "owner_first_name",
+            "last_name": "owner_last_name",
+            "is_banned": False,
             "token_type": "access",
             "iat": 1689683540,
             "exp": 1689683840,
@@ -92,6 +103,10 @@ class Command(BaseCommand):
         }
         customer_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5Njg0MDMxLCJleHAiOjE2ODk2ODQzMzF9.07kcY4cQWmw20PMf9NWrvxR7NbuVIoCmlN2Gi-hIi7A"
         customer_data = {
+            "username": "customer_username",
+            "first_name": "customer_first_name",
+            "last_name": "customer_last_name",
+            "is_banned": False,
             "token_type": "access",
             "iat": 1689684031,
             "exp": 1689684331,
