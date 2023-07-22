@@ -69,6 +69,31 @@ admin_data = {
     "developer_permissions": []
 }
 ```
+Token and data for SuperUser Admin
+```
+admin_superuser_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgyNzcwLCJleHAiOjE2ODk2ODMwODB9.47CONTJjEqoL6JMjyERM5WJYYA5jna55w6CXaoW55PI"
+admin_superuser_token = {
+    "username": "admin_username",
+    "first_name": "admin_first_name",
+    "last_name": "admin_last_name",
+    "user_id": "7fff5488-a091-44a1-9a4e-cb9f535a7f34",
+    "role": "administrator",
+    "avatar": "",
+    "permissions": [],
+    "email": "admin@gmail.com",
+    "phone": "88005553535",
+    "country": None,
+    "created_at": "2023-07-08 21:04:32.226941+00:00",
+    "update_at": "2023-07-08 21:04:32.226953+00:00",
+    "is_superuser": True,
+    "is_banned": False,
+    "is_active": True,
+    "groups": [],
+    "user_permissions": [],
+    "developer_groups": [],
+    "developer_permissions": []
+}
+```
 Token and data for Developer
 ```
 dev_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgzMTI3LCJleHAiOjE2ODk2ODM0Mjd9.h-pqm9eDO9yOs2FrHIW0nPTwT45kT9rHvieYfvJoUXc"

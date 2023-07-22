@@ -34,6 +34,28 @@ class Command(BaseCommand):
             "developer_groups": [],
             "developer_permissions": []
         }
+        admin_superuser_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgyNzcwLCJleHAiOjE2ODk2ODMwODB9.47CONTJjEqoL6JMjyERM5WJYYA5jna55w6CXaoW55PI"
+        admin_superuser_data = {
+            "username": "admin_username",
+            "first_name": "admin_first_name",
+            "last_name": "admin_last_name",
+            "is_banned": False,
+            "is_active": True,
+            "user_id": "7fff5488-a091-44a1-9a4e-cb9f535a7f34",
+            "role": "administrator",
+            "avatar": "",
+            "permissions": [],
+            "email": "admin@gmail.com",
+            "phone": "88005553535",
+            "country": None,
+            "created_at": "2023-07-08 21:04:32.226941+00:00",
+            "update_at": "2023-07-08 21:04:32.226953+00:00",
+            "is_superuser": True,
+            "groups": [],
+            "user_permissions": [],
+            "developer_groups": [],
+            "developer_permissions": []
+        }
 
         dev_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjg5NjgzMTI3LCJleHAiOjE2ODk2ODM0Mjd9.h-pqm9eDO9yOs2FrHIW0nPTwT45kT9rHvieYfvJoUXc"
         dev_data = {
@@ -118,6 +140,7 @@ class Command(BaseCommand):
         }
         tokens = {
             admin_token: admin_data,
+            admin_superuser_token: admin_superuser_data,
             dev_token: dev_data,
             owner_token: owner_data,
             customer_token: customer_data
@@ -128,6 +151,10 @@ class Command(BaseCommand):
     def add_to_redis(tokens: dict):
         redis_client = RedisAccessClient()
         for token, value in tokens.items():
-            value_data = json.dumps(value)
             name = f'{redis_client._prefix}:{token}'
+            try:
+                redis_client.conn.delete(name)
+            except:
+                pass
+            value_data = json.dumps(value)
             redis_client.conn.set(name=name, value=value_data)
