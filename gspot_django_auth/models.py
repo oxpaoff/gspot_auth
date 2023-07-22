@@ -42,6 +42,7 @@ class DeveloperUser(BaseUser):
 
 @dataclass(frozen=True)
 class CustomerUser(BaseUser):
+    age: int
     birthday: datetime
     friends: List[str] = field(default_factory=list)
 
